@@ -41,11 +41,19 @@ function expect(target) {
 // ????????
 
 var Dog = {
-  status:'normal'
+  status:'normal',
+  color:'black',
+  hungry:true,
+  owner:undefined
 };
 
 var sadie = Object.create(Dog)
+sadie.hungry = false
 
+var moonshine = Object.create(Dog)
+moonshine.hungry = true
+
+var atticus = Object.create (Dog)
 //     __
 //    / /_  __  ______ ___  ____ _____  _____
 //   / __ \/ / / / __ `__ \/ __ `/ __ \/ ___/
@@ -53,12 +61,23 @@ var sadie = Object.create(Dog)
 // /_/ /_/\__,_/_/ /_/ /_/\__,_/_/ /_/____/
 
 var Human = {
+  cool: true,
   pet: function(dog) {
     dog.status = 'happy'
+  },
+  feed: function(dog){
+    dog.hungry = false;
   }
 }
 
 var mason = Object.create(Human)
+mason.cool = false
+
+
+var julia = Object.create(Human) 
+julia.cool = true
+  
+
 
 // ????????
 // ????????
